@@ -1,17 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = ('path');
-
-
+const path = require('path');
 
 const app = express();
 
+// middleware
+app.use(bodyParser.urlencoded( {extended: true } ))
+app.use(bodyParser.json())
+
 app.get('/', (req, res) => {
-    res.send('hello')
+    res.sendFile(path.join(__dirname, './public/index.html'));
 })
 
 app.post('/csv-to-json', (req, res) => {
     console.log(req.body)
+    res.sendFile(__dirname, )
 })
 
 app.listen(process.env.PORT || 3000, () => {
