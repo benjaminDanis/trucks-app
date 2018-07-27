@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+    <style>
+        #map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    
 </head>
 <body>
-    <h1>test</h1>
+    <div id="map">
+
+    </div>
+
+    <div class="form">
+        <formm>
+            <label name="csv-upload">Upload Spreadsheet</label>
+            <input name="csv-upload" type='file' id="csv-upload">
+            <button id="submit-button">Submit File</button>
+        </form>
+    </div>
 </body>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAouAKPAQxvgKF5O3ncXWNXO71SO1tvlbM&callback=initMap">
+</script>
+<script type="text/javascript" src="./script.js"></script>
 </html>
