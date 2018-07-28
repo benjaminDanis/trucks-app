@@ -260,10 +260,23 @@ function initMap(){
 }
 
 $('#submit-button').on('click', (event) => {
-  console.log($('#csv-upload').prop('files'))  
+  const file = $('#csv-upload').prop('files')[0].webkitRelativePath
+  + $('#csv-upload').prop('files')[0].name
+  console.log(file);
+  sendFile(file)  
 })
 
 
 function sendFile(file){
-
+  const dataObj = {
+    data: file
+  }
+  $.ajax({
+    method: 'POST',
+    url: '/csv-to-json',
+    data: dataObj
+  }).done((response) => {
+    console.log(response);
+    
+  })
 }
